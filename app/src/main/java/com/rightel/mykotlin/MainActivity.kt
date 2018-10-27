@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener  {
     lateinit var btnNewActivity : Button
     lateinit var btnSeekBarActivity : Button
     lateinit var btnCameraActivity : Button
+    lateinit var btnVideoActivity : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,11 +31,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener  {
         btnNewActivity = findViewById(R.id.mainBtnNewActivity)
         btnSeekBarActivity = findViewById(R.id.mainBtnSeekBarActivity)
         btnCameraActivity = findViewById(R.id.mainBtnCameraActivity)
+        btnVideoActivity = findViewById(R.id.mainBtnVideoActivity)
 
         btnNewActivity.setOnClickListener(this)
         btnMainOk.setOnClickListener(this)
         btnSeekBarActivity.setOnClickListener(this)
         btnCameraActivity.setOnClickListener(this)
+        btnVideoActivity.setOnClickListener(this)
 
 
 //        btnMainOk.setOnClickListener {
@@ -79,6 +82,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener  {
 
             R.id.mainBtnCameraActivity -> {
                 startActivity((Intent(this, CameraActivity::class.java)))
+
+            }
+
+            R.id.mainBtnVideoActivity -> {
+                startActivity((Intent(this, VideoActivity::class.java)))
 
             }
 
