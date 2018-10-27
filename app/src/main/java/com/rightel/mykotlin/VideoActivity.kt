@@ -10,7 +10,7 @@ import org.jetbrains.anko.toast
 
 class VideoActivity : AppCompatActivity() {
 
-    val REQUECT_CODE_VIDEO = 1
+    private val REQUEST_CODE_VIDEO = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +25,7 @@ class VideoActivity : AppCompatActivity() {
     fun callVideo(){
         val videoIntent = Intent(MediaStore.ACTION_VIDEO_CAPTURE)
         if(videoIntent.resolveActivity(packageManager) != null){
-            startActivityForResult(videoIntent, REQUECT_CODE_VIDEO)
+            startActivityForResult(videoIntent, REQUEST_CODE_VIDEO)
         }
     }
 
@@ -33,14 +33,14 @@ class VideoActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         when(requestCode){
-            REQUECT_CODE_VIDEO -> {
+            REQUEST_CODE_VIDEO -> {
                 if (resultCode == Activity.RESULT_OK && data != null){
                     activity_video_view.setVideoURI(data.data)
                     activity_video_view.start()
 
                 }
             }else -> {
-            //ANKO :)
+            //ANKO ::> https://github.com/Kotlin/anko
             toast("The video data is not existed")
         }
 
