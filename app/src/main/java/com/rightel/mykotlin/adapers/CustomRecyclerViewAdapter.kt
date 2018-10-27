@@ -22,7 +22,7 @@ class CustomRecyclerViewAdapter(var listModel : ArrayList<DataModelRecycler>) : 
     override fun onBindViewHolder(vh: ViewHolder, index: Int) {
 
        val dataModel : DataModelRecycler = listModel[index]
-       
+
        vh.txtTitle.text = dataModel.name
        vh.txtDate.text = dataModel.date
     }

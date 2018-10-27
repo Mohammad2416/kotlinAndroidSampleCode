@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener  {
     lateinit var btnSeekBarActivity : Button
     lateinit var btnCameraActivity : Button
     lateinit var btnVideoActivity : Button
+    lateinit var btnRecyclerActivity : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,27 +33,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener  {
         btnSeekBarActivity = findViewById(R.id.mainBtnSeekBarActivity)
         btnCameraActivity = findViewById(R.id.mainBtnCameraActivity)
         btnVideoActivity = findViewById(R.id.mainBtnVideoActivity)
+        btnRecyclerActivity = findViewById(R.id.mainBtnRecyclerViewActivity)
 
         btnNewActivity.setOnClickListener(this)
         btnMainOk.setOnClickListener(this)
         btnSeekBarActivity.setOnClickListener(this)
         btnCameraActivity.setOnClickListener(this)
         btnVideoActivity.setOnClickListener(this)
-
-
-//        btnMainOk.setOnClickListener {
-//            textViewMain.text = edtMain.text
-//        }
+        btnRecyclerActivity.setOnClickListener(this)
 
 
 
         edtMain.addTextChangedListener(object : TextWatcher{
             override fun afterTextChanged(s: Editable?) {
-//                TODOm("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-           //     TODOm("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
@@ -87,6 +83,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener  {
 
             R.id.mainBtnVideoActivity -> {
                 startActivity((Intent(this, VideoActivity::class.java)))
+
+            }
+
+            R.id.mainBtnRecyclerViewActivity -> {
+                startActivity((Intent(this, RecyclerViewActivity::class.java)))
 
             }
 
