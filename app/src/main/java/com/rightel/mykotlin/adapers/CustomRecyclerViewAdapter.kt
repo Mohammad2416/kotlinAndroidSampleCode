@@ -20,12 +20,15 @@ class CustomRecyclerViewAdapter(var listModel : ArrayList<DataModelRecycler>) : 
     }
 
     override fun onBindViewHolder(vh: ViewHolder, index: Int) {
-       vh.txtTitle.text = listModel[index].name
-       vh.txtDate.text = listModel[index].date
+
+       val dataModel : DataModelRecycler = listModel[index]
+       
+       vh.txtTitle.text = dataModel.name
+       vh.txtDate.text = dataModel.date
     }
 
 
-    class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
+    class ViewHolder (itemView : View) : RecyclerView.ViewHolder(itemView) {
         val txtTitle = itemView.row_recycler_txt_title!!
         val txtDate = itemView.row_recycler_txt_date!!
     }
