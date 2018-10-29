@@ -11,7 +11,10 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_select_image_from_gallery.*
 import org.jetbrains.anko.toast
+import java.io.ByteArrayOutputStream
 import java.io.InputStream
+import java.io.OutputStream
+import java.util.*
 
 class SelectImageFromGalleryActivity : AppCompatActivity() {
 
@@ -36,7 +39,7 @@ class SelectImageFromGalleryActivity : AppCompatActivity() {
         when(requestCode){
             REQUEST_IMAGE_PERMISSION -> {
                 if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                    getImageFromGallary()
+                    getImageFromGallery()
 
                 }else{
                     toast("Permission is denied!")
@@ -45,7 +48,7 @@ class SelectImageFromGalleryActivity : AppCompatActivity() {
         }
     }
 
-    private fun getImageFromGallary() {
+    private fun getImageFromGallery() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
         if (intent.resolveActivity(packageManager) != null){
@@ -68,10 +71,29 @@ class SelectImageFromGalleryActivity : AppCompatActivity() {
 
     private fun setImageToView(data: Intent?) {
       val filePath : Uri = data?.data!!
-        val inputStrem : InputStream = contentResolver.openInputStream(filePath)!!
-        val bitmap : Bitmap = BitmapFactory.decodeStream(inputStrem)
+        val inputStream : InputStream = contentResolver.openInputStream(filePath)!!
+        val bitmap : Bitmap = BitmapFactory.decodeStream(inputStream)
 
         activity_select_image_imgview.setImageBitmap(bitmap)
+    }
+
+
+    /**
+     * Convert an Image To string for upload to internet like your server
+     * at HTTP request just add these code:
+     * var imageData = imageToString(bitmap)
+     * param.put(...)
+     * */
+    private fun imageToString(bitmap: Bitmap) : String {
+        val outPutStream = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 50, outPutStream)
+        val imageByte : ByteArray = outPutStream.toByteArray()
+        var encodeImage : String = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            Base64.getEncoder().encodeToString(imageByte)
+        } else {
+            android.util.Base64.decode(imageByte, android.util.Base64.DEFAULT).toString()
+        }
+        return  encodeImage
     }
 
 }
