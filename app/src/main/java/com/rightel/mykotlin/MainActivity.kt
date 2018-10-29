@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener  {
 
@@ -42,6 +43,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener  {
         btnVideoActivity.setOnClickListener(this)
         btnRecyclerActivity.setOnClickListener(this)
 
+//      #find view with another method
+        mainBtnImageFromGalleryActivity.setOnClickListener(this)
 
 
         edtMain.addTextChangedListener(object : TextWatcher{
@@ -58,6 +61,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener  {
 
 
     }//onCreate
+
+
 
     override fun onClick(v: View?) {
 
@@ -89,6 +94,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener  {
             R.id.mainBtnRecyclerViewActivity -> {
                 startActivity((Intent(this, RecyclerViewActivity::class.java)))
 
+            }
+
+            R.id.mainBtnImageFromGalleryActivity ->{
+                startActivity(Intent(this, SelectImageFromGalleryActivity::class.java))
             }
 
         }

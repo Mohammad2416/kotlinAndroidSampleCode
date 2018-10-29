@@ -18,65 +18,85 @@
         android:id="@+id/main_editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/main_txt"
         android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@id/main_txt"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"/>
+        android:text="Name" />
 
     <Button
         android:id="@+id/mainBtn"
         android:layout_width="120dp"
         android:layout_height="56dp"
         android:layout_below="@+id/main_editText"
-        android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true"
-        android:text="ok"/>
+        android:layout_marginTop="16dp"
+        android:text="ok" />
 
-    <Button
-        android:id="@+id/mainBtnNewActivity"
-        android:layout_width="120dp"
-        android:layout_height="56dp"
+
+    <LinearLayout
+        android:id="@+id/button_group1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/mainBtn"
-        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
         android:layout_centerHorizontal="true"
-        android:text="CheckBox"/>
+        android:gravity="center_horizontal">
 
-    <Button
-        android:id="@+id/mainBtnSeekBarActivity"
-        android:layout_width="120dp"
-        android:layout_height="56dp"
-        android:layout_below="@+id/mainBtnNewActivity"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"
-        android:text="SeekBar"/>
-
-    <Button
-        android:id="@+id/mainBtnCameraActivity"
-        android:layout_width="120dp"
-        android:layout_height="56dp"
-        android:layout_below="@+id/mainBtnSeekBarActivity"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"
-        android:text="Camera"/>
-
-    <Button
-        android:id="@+id/mainBtnVideoActivity"
-        android:layout_width="120dp"
-        android:layout_height="56dp"
-        android:layout_below="@+id/mainBtnSeekBarActivity"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"
-        android:text="Video"/>
+        <Button
+            android:id="@+id/mainBtnNewActivity"
+            android:layout_width="120dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:text="CheckBox" />
 
 
-    <Button
-        android:id="@+id/mainBtnRecyclerViewActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="56dp"
-        android:layout_below="@+id/mainBtnVideoActivity"
-        android:layout_marginTop="16dp"
+        <Button
+            android:id="@+id/mainBtnCameraActivity"
+            android:layout_width="120dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:text="Camera" />
+
+        <Button
+            android:id="@+id/mainBtnVideoActivity"
+            android:layout_width="120dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:text="Video" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_group1"
+        android:orientation="horizontal"
         android:layout_centerHorizontal="true"
-        android:text="RecyclerView"/>
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/mainBtnSeekBarActivity"
+            android:layout_width="120dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:text="SeekBar" />
+
+        <Button
+            android:id="@+id/mainBtnRecyclerViewActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:text="RecyclerView" />
+
+        <Button
+            android:id="@+id/mainBtnImageFromGalleryActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:text="Image From Gallery" />
+
+    </LinearLayout>
+
 
 </RelativeLayout>

@@ -18,10 +18,16 @@ class RecyclerViewActivity : AppCompatActivity() {
 
         val dataModels = ArrayList<DataModelRecycler>()
         dataModels.add(DataModelRecycler("Mohammad", "1988"))
+        dataModels.add(DataModelRecycler("Mohammad", "1988"))
+        dataModels.add(DataModelRecycler("Omid", "2010"))
         dataModels.add(DataModelRecycler("Omid", "2010"))
         dataModels.add(DataModelRecycler("Laleh", "2011"))
         dataModels.add(DataModelRecycler("Hasan", "1988"))
+        dataModels.add(DataModelRecycler("Hasan", "1988"))
         dataModels.add(DataModelRecycler("Narges", "1299"))
+        dataModels.add(DataModelRecycler("Laleh", "2011"))
+        dataModels.add(DataModelRecycler("Laleh", "2011"))
+        dataModels.add(DataModelRecycler("Laleh", "2011"))
 
         val adapter = CustomRecyclerViewAdapter(dataModels)
         activity_recycler_rv.adapter =  adapter
