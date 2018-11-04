@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener  {
 
 //      #find view with another method
         mainBtnImageFromGalleryActivity.setOnClickListener(this)
+        mainBtnRestApiActivity.setOnClickListener { this }
 
 
         edtMain.addTextChangedListener(object : TextWatcher{
@@ -98,6 +99,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener  {
 
             R.id.mainBtnImageFromGalleryActivity ->{
                 startActivity(Intent(this, SelectImageFromGalleryActivity::class.java))
+            }
+
+            R.id.mainBtnRestApiActivity -> {
+                startActivity(Intent(this, RestApiActivity::class.java))
             }
 
         }

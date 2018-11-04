@@ -68,6 +68,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/group2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/button_group1"
@@ -96,7 +97,17 @@
             android:layout_marginTop="16dp"
             android:text="Image From Gallery" />
 
+
+
     </LinearLayout>
+
+    <Button
+        android:id="@+id/mainBtnRestApiActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/group2"
+        android:text="RestApi" />
 
 
 </RelativeLayout>
