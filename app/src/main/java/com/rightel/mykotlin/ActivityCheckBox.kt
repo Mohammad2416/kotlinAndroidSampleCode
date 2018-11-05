@@ -10,7 +10,7 @@ import android.widget.Toast
 class ActivityCheckBox : AppCompatActivity() {
 
 
-    lateinit var checkBoxOne : CheckBox
+    lateinit var checkBoxOne: CheckBox
     lateinit var checkBoxTwo: CheckBox
 
 
@@ -32,7 +32,7 @@ class ActivityCheckBox : AppCompatActivity() {
     }
 
 
-    fun Activity.toast(message: String, duration : Int){
-        Toast.makeText(this, message,duration).show()
+    fun Activity.toast(message: String, duration: Int) {
+        Toast.makeText(this, message, duration).show()
     }
 }

@@ -5,17 +5,17 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    private var getInstanceOfRetrofit : Retrofit? = null
 
-    val instance : Retrofit get() {
-        if(getInstanceOfRetrofit == null){
-            getInstanceOfRetrofit = Retrofit.Builder()
+    private var retrofit: Retrofit? = null
+    fun  getRetrofitInstance(): Retrofit {
+        if (retrofit == null) {
+            retrofit = retrofit2.Retrofit.Builder()
                     .baseUrl("https://jsonplaceholder.typicode.com/")
-                    .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create())
                     .build()
         }
-        return getInstanceOfRetrofit!!
+        return retrofit!!
     }
 
 

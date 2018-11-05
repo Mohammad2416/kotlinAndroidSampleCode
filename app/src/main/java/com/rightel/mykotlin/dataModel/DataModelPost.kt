@@ -6,18 +6,18 @@ import com.google.gson.annotations.SerializedName
 
      @SerializedName("userId")
      @Expose
-     private val userId: Int = 0
+      val userId: Int = 0
 
      @SerializedName("id")
      @Expose
-     private val id: Int = 0
+      val id: Int = 0
 
      @SerializedName("title")
      @Expose
-     private val title: String? = null
+      val title: String? = null
 
      @SerializedName("body")
      @Expose
-     private val body: String? = null
+      val body: String? = null
 
  }
