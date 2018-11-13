@@ -3,7 +3,7 @@
     package="com.rightel.mykotlin">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -25,7 +25,8 @@
         <activity android:name=".VideoActivity" />
         <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".SelectImageFromGalleryActivity" />
-        <activity android:name=".RestApiActivity"/>
+        <activity android:name=".RestApiActivity" />
+        <activity android:name=".sharePreferencesActivity"></activity>
     </application>
 
 </manifest>
